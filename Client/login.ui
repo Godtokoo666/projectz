@@ -49,24 +49,6 @@
     <string>登录-局域网聊天</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_login">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>230</y>
-     <width>75</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>登录</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
@@ -92,7 +74,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_Username">
+       <widget class="QLineEdit" name="lineEdit_username">
         <property name="placeholderText">
          <string>用户名</string>
         </property>
@@ -125,6 +107,42 @@
        </widget>
       </item>
      </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>230</y>
+     <width>158</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QPushButton" name="pushButton_login">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>登录</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_register">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>注册</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

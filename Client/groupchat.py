@@ -16,8 +16,8 @@ class MyGroupChat(Ui_GroupChat, QWidget):
         self.soc=soc
         self.user=user
         self.onlineusers=onlineusers
-        for i in self.onlineusers:
-            self.listWidget.addItem(i)
+        onlineusers=list(onlineusers)
+        self.listWidget.addItems(onlineusers)
         for i in chalist:
             self.textBrowser_message.append("<b><font size='5'><font color='blue'>"+self.user[i[2]-1][1]+"</font>:"+(i[3])+"</font></b>")
         self.textBrowser_message.append("<b><font color='red' size ='5' align='center'>-----以上为历史消息------</font></b>")
@@ -36,6 +36,7 @@ class MyGroupChat(Ui_GroupChat, QWidget):
             #         self.index=i[0]
             #         self.textBrowser_message.append("<b><font size='5'><font color='blue'>"+self.user[i[2]-1][1]+"</font>:"+(i[3])+"</font></b>")
         self.label_groups.setText(str(group))
+        self.label_users.setText(str(username))
         self.pushButton_send.clicked.connect(self.sendMsg)
         self.pushButton_refresh.clicked.connect(self.refresh)
         self.pushButton_exit.clicked.connect(self.exit)
@@ -51,8 +52,10 @@ class MyGroupChat(Ui_GroupChat, QWidget):
                     mes=ast.literal_eval(ee[ee.find(',')+1:])
                     self.onlineusers=mes
                     self.listWidget.clear()
-                    for i in self.onlineusers:
-                        self.listWidget.addItem(i)
+                    onlineusers=list(self.onlineusers)
+                    self.listWidget.addItems(onlineusers)
+                elif type=='mainlist':
+                    self.user=ast.literal_eval(ee[ee.find(',')+1:])
                 elif type=='newmes':
                     mes=ee.split(',')
                     self.textBrowser_message.append("<b><font size='5'><font color='blue'>"+mes[1]+"</font>:"+mes[2]+"</font></b>")
@@ -87,4 +90,5 @@ class MyGroupChat(Ui_GroupChat, QWidget):
             print(e)
             QtWidgets.QMessageBox.information(self, "提示", "刷新失败！请检查网络连接！")
     def exit(self):
+        self.soc.close()
         self.close()

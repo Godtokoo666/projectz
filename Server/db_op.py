@@ -6,12 +6,12 @@ class DataBaseOperator:
         self.conn = sqlite3.connect(self.dbName, check_same_thread=False, timeout=2.0)
         self.cursor = self.conn.cursor()
     def dbInit(self):
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS users (uid INTEGER PRIMARY KEY,username TEXT,password TEXT,role TEXT,gid INTEGER)")
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS groups (gid INTEGER PRIMARY KEY,gname TEXT)")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS users (uid INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT,password TEXT,role TEXT,gid INTEGER)")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS groups (gid INTEGER PRIMARY KEY AUTOINCREMENT,gname TEXT)")
         self.cursor.execute("CREATE TABLE IF NOT EXISTS chat (cid INTEGER PRIMARY KEY AUTOINCREMENT,gid INTEGER,uid INTEGER,content TEXT)")
         self.conn.commit()
-    def addUser(self,uid:int,username:str,password:str,group:int,role:str):
-        self.cursor.execute("INSERT INTO users VALUES (?,?,?,?,?)",(uid,username,password,group,role))
+    def addUser(self,username:str,password:str,group:int,role:str):
+        self.cursor.execute("INSERT INTO users VALUES (?,?,?,?,?)",(None,username,password,group,role))
         self.conn.commit()
     def addGroup(self,gid:int,gname:str):
         self.cursor.execute("INSERT INTO groups VALUES (?,?)",(gid,gname))

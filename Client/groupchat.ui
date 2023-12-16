@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>810</width>
-    <height>656</height>
+    <height>649</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,7 +25,7 @@
            <property name="maximumSize">
             <size>
              <width>80</width>
-             <height>20</height>
+             <height>30</height>
             </size>
            </property>
            <property name="text">
@@ -37,8 +37,34 @@
           <widget class="QLabel" name="label_groups">
            <property name="maximumSize">
             <size>
+             <width>120</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_usersdisplay">
+           <property name="maximumSize">
+            <size>
              <width>80</width>
-             <height>20</height>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>欢迎您：</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_users">
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>30</height>
             </size>
            </property>
            <property name="text">

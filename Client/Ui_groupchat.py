@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'd:\Python_Workspace\UI\groupchat.ui'
+# Form implementation generated from reading ui file 'd:\Python_Workspace\Client\groupchat.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_GroupChat(object):
     def setupUi(self, GroupChat):
         GroupChat.setObjectName("GroupChat")
-        GroupChat.resize(810, 656)
+        GroupChat.resize(810, 649)
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(GroupChat)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
@@ -22,13 +22,21 @@ class Ui_GroupChat(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.label_groupsundisplay = QtWidgets.QLabel(parent=GroupChat)
-        self.label_groupsundisplay.setMaximumSize(QtCore.QSize(80, 20))
+        self.label_groupsundisplay.setMaximumSize(QtCore.QSize(80, 30))
         self.label_groupsundisplay.setObjectName("label_groupsundisplay")
         self.horizontalLayout_2.addWidget(self.label_groupsundisplay)
         self.label_groups = QtWidgets.QLabel(parent=GroupChat)
-        self.label_groups.setMaximumSize(QtCore.QSize(80, 20))
+        self.label_groups.setMaximumSize(QtCore.QSize(120, 30))
         self.label_groups.setObjectName("label_groups")
         self.horizontalLayout_2.addWidget(self.label_groups)
+        self.label_usersdisplay = QtWidgets.QLabel(parent=GroupChat)
+        self.label_usersdisplay.setMaximumSize(QtCore.QSize(80, 30))
+        self.label_usersdisplay.setObjectName("label_usersdisplay")
+        self.horizontalLayout_2.addWidget(self.label_usersdisplay)
+        self.label_users = QtWidgets.QLabel(parent=GroupChat)
+        self.label_users.setMaximumSize(QtCore.QSize(180, 30))
+        self.label_users.setObjectName("label_users")
+        self.horizontalLayout_2.addWidget(self.label_users)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.textBrowser_message = QtWidgets.QTextBrowser(parent=GroupChat)
         self.textBrowser_message.setMaximumSize(QtCore.QSize(16777215, 16777215))
@@ -74,6 +82,8 @@ class Ui_GroupChat(object):
         GroupChat.setWindowTitle(_translate("GroupChat", "群聊-局域网聊天"))
         self.label_groupsundisplay.setText(_translate("GroupChat", "当前群组："))
         self.label_groups.setText(_translate("GroupChat", "1"))
+        self.label_usersdisplay.setText(_translate("GroupChat", "欢迎您："))
+        self.label_users.setText(_translate("GroupChat", "1"))
         self.label.setText(_translate("GroupChat", "在线用户："))
         self.pushButton_refresh.setText(_translate("GroupChat", "刷新消息"))
         self.pushButton_send.setText(_translate("GroupChat", "发送"))
