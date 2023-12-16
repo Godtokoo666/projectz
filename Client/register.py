@@ -6,6 +6,7 @@ from login import MyLogin
 
 class MyRegister(Ui_Dialog_Register, QtWidgets.QWidget):
     def __init__(self, soc,groupList,parent=None):
+        '''初始化注册界面'''
         super().__init__(parent)
         self.setupUi(self)
         self.soc=soc
@@ -36,7 +37,7 @@ class MyRegister(Ui_Dialog_Register, QtWidgets.QWidget):
                     if res[1]=='True':
                         QtWidgets.QMessageBox.information(self, "提示", "注册成功！即将跳转登录界面！")
                         self.close()
-                        self.login=MyLogin(self.soc)
+                        self.login=MyLogin(self.soc) #注册成功后跳转登录界面,并把socket对象传入
                         self.login.show()
                     else:
                         QtWidgets.QMessageBox.information(self, "提示", "注册失败！请检查用户名和密码！")
@@ -50,5 +51,5 @@ class MyRegister(Ui_Dialog_Register, QtWidgets.QWidget):
     def PointLogin(self):
         '''跳转登录'''
         self.close()
-        self.login = MyLogin(self.soc)
+        self.login = MyLogin(self.soc) #跳转登录界面,并把socket对象传入
         self.login.show()
