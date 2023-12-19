@@ -11,8 +11,8 @@ class DataBaseOperator:
         self.cursor.execute("CREATE TABLE IF NOT EXISTS groups (gid INTEGER PRIMARY KEY AUTOINCREMENT,gname TEXT)")
         self.cursor.execute("CREATE TABLE IF NOT EXISTS chat (cid INTEGER PRIMARY KEY AUTOINCREMENT,gid INTEGER,uid INTEGER,content TEXT)")
         self.conn.commit()
-    def addUser(self,username:str,password:str,group:int,role:str): #添加用户
-        self.cursor.execute("INSERT INTO users VALUES (?,?,?,?,?)",(None,username,password,group,role))
+    def addUser(self,username:str,password:str,role:str,gruop:int): #添加用户
+        self.cursor.execute("INSERT INTO users VALUES (?,?,?,?,?)",(None,username,password,role,gruop))
         self.conn.commit()
     def addGroup(self,gid:int,gname:str): #添加群组
         self.cursor.execute("INSERT INTO groups VALUES (?,?)",(gid,gname))

@@ -112,7 +112,7 @@ class GroupChat (threading.Thread):
     def handleregister(self,conn,username,password,group):
         '''处理注册'''
         if self.usermap.get(username)==None:
-            self.dbo.addUser(username,password,self.groupmap[group],'1') #向数据库添加用户
+            self.dbo.addUser(username,password,'1',self.groupmap[group]) #向数据库添加用户
             self.updatamainlist() #更新用户、群组列表，防止注册后，其他用户调用userlist时，出现index out of range
             result='register'+','+'True'
             conn.send(result.encode('utf-8'))
